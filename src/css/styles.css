@@ -1,0 +1,253 @@
+/*-----------------------------------*/
+/* estilos generales */
+/*-----------------------------------*/
+:root {
+    --separation: 30px;
+    --color-btn: #0074D9;
+    --separation-btn: 10px;
+    --messurment-color: 50px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+
+body {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background: #ccc;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------------------------------*/
+/* estilos del content */
+/*-----------------------------------*/
+.title {
+    display: block;
+    width: 100%;
+    font-size: 58px;
+    text-align: center;
+    margin-bottom: var(--separation);
+}
+
+.content {
+    display: flex;
+    width: 90%;
+    height: 500px;
+    max-width: 1500px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*-----------------------------------*/
+/* estilos del form */
+/*-----------------------------------*/
+.content .app {
+    display: block;
+    width: 50%;
+    background: #f4f4f4;
+    padding: var(--separation);
+}
+
+.content .app .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: var(--separation);
+}
+
+.content .app .row:last-child {
+    margin: 0;
+}
+
+/*-----------------------------------*/
+/* estilos del alert form */
+/*-----------------------------------*/
+.content .app .alert-form {
+    display: block;
+    width: 100%;
+    background: #ff0000;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: var(--separation);
+    transition: all .3S ease;
+    transform: scaleY(0%);
+}
+
+.content .app .alert-form svg {
+    font-size: 20px;
+    margin-right: 10px;
+}
+
+.content .app .alert-form.show {
+    transform: scaleY(100%);
+}
+
+/*-----------------------------------*/
+/* estilos del row-btn */
+/*-----------------------------------*/
+.content .app .row-btn .btn {
+    display: block;
+    width: calc(50% - (var(--separation-btn) / 2));
+    background: var(--color-btn);
+    color: #fff;
+    padding: var(--separation-btn);
+    border: none;
+    border-radius: 4px;
+    transition: all .3S ease;
+    cursor: pointer;
+}
+
+.content .app .row-btn .btn svg {
+    margin-right: 10px;
+}
+
+/*-----------------------------------*/
+/* estilos del btn-image */
+/*-----------------------------------*/
+.content .app .row-btn .btn-image {
+    margin-right: calc(var(--separation-btn) / 2);
+    position: relative;
+}
+
+.content .app .row-btn .btn-image .input-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.content .app .row-btn .btn-image .text-btn-image {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+/*-----------------------------------*/
+/* estilos del btn en estado hover y active */
+/*-----------------------------------*/
+.content .app .row-btn .btn:hover {
+    background: rgba(0, 116, 217, .5);
+}
+
+.content .app .row-btn .btn:active {
+    transform: scale(.95);
+}
+
+/*-----------------------------------*/
+/* estilos del row-color */
+/*-----------------------------------*/
+.content .app .row-color {
+    justify-content: center;
+}
+
+.content .app .row-color .color {
+    display: block;
+    width: var(--messurment-color);
+    height: var(--messurment-color);
+    border: 1px solid rgba(0, 0, 0, .3);
+}
+
+/*-----------------------------------*/
+/* estilos del row-code-color */
+/*-----------------------------------*/
+.content .app .row-code-color .col-btn {
+    display: block;
+    width: 15%;
+    height: 30px;
+}
+
+.content .app .row-code-color .col-btn .option-code {
+    display: none;
+}
+
+.content .app .row-code-color .col-btn label {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: var(--color-btn);
+    color: #fff;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    transition: all .3S ease;
+}
+
+.content .app .row-code-color .col-btn .option-code:checked + label {
+    background: #212124;
+}
+
+/*-----------------------------------*/
+/* estilos del col-input */
+/*-----------------------------------*/
+.content .app .row-code-color .col-input {
+    display: block;
+    width: 70%;
+}
+
+.content .app .row-code-color .col-input .input-color {
+    display: block;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    outline: none;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.content .app .row-code-color .col-input .input-color::selection {
+    background: none;
+}
+
+.content .app .row-code-color .col-input .alert-copy {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin-top: var(--separation-btn);
+    transition: all .3S ease;
+    opacity: 0;
+}
+
+.content .app .row-code-color .col-input .alert-copy svg {
+    margin-right: var(--separation-btn);
+}
+
+.content .app .row-code-color .col-input .alert-copy.show {
+    opacity: 1;
+}
+
+/*-----------------------------------*/
+/* estilos del image */
+/*-----------------------------------*/
+.content .image {
+    display: flex;
+    width: 50%;
+    height: 100%;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    border: 1px solid rgba(0, 0, 0, .5);
+}
+
+/*-----------------------------------*/
+/* estilos del video */
+/*-----------------------------------*/
+.video {
+    display: none;
+}

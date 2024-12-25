@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extraer colores</title>
+</head>
+
+<body>
+    <h1 class="title">Extraer Color</h1>
+    <div class="content">
+        <form class="app" id="app">
+            <p class="alert-form" id="alert-form"><i class="fa-solid fa-xmark"></i> <span id="txt-alert">Extension no soportada</span></p>
+            <div class="row row-btn">
+                <div class="col btn btn-image">
+                    <input type="file" class="input-image" id="input-image">
+                    <p class="text-btn-image">
+                        <i class="fa-regular fa-image"></i>
+                        <span id="txt-btn-image">Cargar imagen</span>
+                    </p>
+                </div>
+                <button class="col btn btn-webcam" id="btn-webcam">
+                    <i class="fa-regular fa-eye"></i>
+                    Webcam
+                </button>
+            </div>
+            <div class="row row-color">
+                <div class="color" id="color"></div>
+            </div>
+            <div class="row row-code-color">
+                <div class="col col-btn">
+                    <input type="radio" name="option-code" checked class="option-code" id="option-hex">
+                    <label for="option-hex">HEX</label>
+                </div>
+                <div class="col col-btn">
+                    <input type="radio" name="option-code" class="option-code" id="option-rgb">
+                    <label for="option-rgb">RGB</label>
+                </div>
+                <div class="col col-input">
+                    <input type="text" class="input-color" id="input-color" readonly>
+                    <p class="alert-copy" id="alert-copy"><i class="fa-regular fa-copy"></i> Texto copiado</p>
+                </div>
+            </div>
+        </form>
+        <div class="image">
+            <canvas class="canvas" id="canvas"></canvas>
+        </div>
+    </div>
+
+    <video class="video" id="video"></video>
+</body>
+
+</html>

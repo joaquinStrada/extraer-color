@@ -15,9 +15,19 @@ jobs:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
             - run: npm install && npm run build
+            - name: Create repo local
+              run: cd build && git init
             - name: configure github
               run: git config --global user.email ${{ secrets.email }} && git config --global user.name ${{ secrets.name }} && git config --global user.password ${{ secrets.password }}
-            - name: update github
-              run: git add . && git commit -am "build a project" && git remote add origin https://github.com/joaquinStrada/extraer-color.git && git push origin main
+            - name: Create a new branch
+              run: git branch -M build
+            - name: add files
+              run: git add .
+            - name: create commit
+              run: git commit -am "build to project"
+            - name: add remote
+              run: git remote add origin https://github.com/joaquinStrada/extraer-color.git
+            - name: push on github
+              run: git bush origin build
               
             

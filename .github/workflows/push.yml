@@ -14,15 +14,8 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
                   cache: 'npm'
-            - run: |
-                npm install
-                npm run build
+            - run: npm install && npm run build
             - name: update github
-              run: |
-              sudo apt-get install git -y
-              git add .
-              git commit -am 'build a project'
-              git remote add origin https://github.com/joaquinStrada/extraer-color.git
-              git push origin main
+              run: git add . && git commit -am "build a project" && git remote add origin https://github.com/joaquinStrada/extraer-color.git && git push origin main
               
             
